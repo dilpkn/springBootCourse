@@ -1,5 +1,24 @@
-<img width="962" height="157" alt="image" src="https://github.com/user-attachments/assets/ddde67b0-422f-4141-9389-424d09c41bda" /># Зависимости в maven и их значение
+# Зависимости в maven и их значение
 
+### @SpringBootApplication
+Аннотация второго класса — @SpringBootApplication. Эта аннотация известна как мета-аннотация, она объединяет @SpringBootConfiguration, @EnableAutoConfiguration и @ComponentScan.
+Это "включатель" всего Spring Boot приложения!
+
+### @EnableAutoConfiguration?
+Это аннотация, которая включает автоматическую конфигурацию Spring Boot. Она анализирует classpath и автоматически настраивает бины, которые вы, вероятно, понадобятся.
+
+_Стартеры и автоконфигурация
+Автоматическая конфигурация разработана так, чтобы хорошо работать со стартерами, но эти две концепции не связаны напрямую. Вы свободны выбирать зависимости от банки вне стартовых. Spring Boot по-прежнему старается максимально настраивать ваше приложение._
+
+### SpringApplication.run():
+Это главный метод запуска Spring Boot приложения. Давайте разберем его по частям:
+
+Этапы запуска:
+Инициализация Spring контекста
+Сканирование компонентов (классы с @Component, @Service, @Repository, @Controller)
+Автоконфигурация на основе зависимостей
+Запуск встроенного веб-сервера (Tomcat/Jetty/Undertow)
+Запуск CommandLineRunner/ApplicationRunner бинов
 ### специальный стартер, который даёт полезные стандартные характеристики Maven. сама по себе не обеспечивает никаких зависимостей.
 ```
 <parent>
@@ -29,28 +48,10 @@
 Не требует шаблонов представлений (как @Controller)
 <img width="962" height="157" alt="image" src="https://github.com/user-attachments/assets/3e259a30-70a1-48b7-9c95-4df031972c7d" />
 REST Controller (REST-контроллер) — это контроллер в Spring, предназначенный для создания RESTful Web Services (веб-сервисов, которые следуют архитектурному стилю REST).
+<img width="962" height="157" alt="image" src="https://github.com/user-attachments/assets/ddde67b0-422f-4141-9389-424d09c41bda" />
+
 
 _Аннотации @RestController и @RequestMapping — это аннотации Spring MVC (они не специфичны для Spring Boot)_
-
-### @SpringBootApplication
-Аннотация второго класса — @SpringBootApplication. Эта аннотация известна как мета-аннотация, она объединяет @SpringBootConfiguration, @EnableAutoConfiguration и @ComponentScan.
-Это "включатель" всего Spring Boot приложения!
-
-### @EnableAutoConfiguration?
-Это аннотация, которая включает автоматическую конфигурацию Spring Boot. Она анализирует classpath и автоматически настраивает бины, которые вы, вероятно, понадобятся.
-
-_Стартеры и автоконфигурация
-Автоматическая конфигурация разработана так, чтобы хорошо работать со стартерами, но эти две концепции не связаны напрямую. Вы свободны выбирать зависимости от банки вне стартовых. Spring Boot по-прежнему старается максимально настраивать ваше приложение._
-
-### SpringApplication.run():
-Это главный метод запуска Spring Boot приложения. Давайте разберем его по частям:
-
-Этапы запуска:
-Инициализация Spring контекста
-Сканирование компонентов (классы с @Component, @Service, @Repository, @Controller)
-Автоконфигурация на основе зависимостей
-Запуск встроенного веб-сервера (Tomcat/Jetty/Undertow)
-Запуск CommandLineRunner/ApplicationRunner бинов
 
 ## для развертывания и распостранения 
 это одна из привелегий spring boot
